@@ -1,3 +1,8 @@
+// ==================== PWA ====================
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/_pr/service-worker.js');
+}
+
 // ==================== 轮播逻辑 ====================
 const projects = [
   { title: "石家庄高铁皇冠假日酒店", location: "河北 石家庄" },
