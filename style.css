@@ -811,9 +811,14 @@ body {
   .tool-row { grid-template-columns: 1fr; gap: 8px; }
 }
 
-/* 技与术页顶部间距覆盖 */
+/* 技与术页 */
+#view-technique {
+  overflow-y: auto;
+}
 #view-technique .sub-content {
   padding-top: 80px;
+  height: auto;
+  min-height: 100vh;
 }
 
 /* 灯箱 */
@@ -992,8 +997,9 @@ body {
   #view-philosophy .phil-image { width: 96%; max-width: 96%; transform: scale(1.05); }
   #view-philosophy .sub-content { padding: 100px 10px 40px; }
 
-  /* 技与术 — 已在上方处理 grid，此处覆盖间距 */
-  #view-technique .sub-content { padding-top: 100px; padding-left: 12px; padding-right: 12px; }
+  /* 技与术 */
+  #view-technique { overflow-y: auto; }
+  #view-technique .sub-content { padding-top: 100px; padding-left: 12px; padding-right: 12px; height: auto; min-height: 100vh; }
   .tool-card { padding: 28px 20px 24px; gap: 16px; }
 
   /* 个人信息 — 单列 */

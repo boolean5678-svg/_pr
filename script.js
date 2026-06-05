@@ -567,16 +567,26 @@ brandLink.addEventListener('click', () => switchView('home'));
   var vidClose = vidOverlay ? vidOverlay.querySelector('.lightbox-close') : null;
   var vidEl = vidOverlay ? vidOverlay.querySelector('video') : null;
 
-  if (vidTrigger && vidOverlay) {
+  if (vidTrigger && vidOverlay && vidEl) {
     function openVid() {
       vidOverlay.classList.add('open');
       document.body.style.overflow = 'hidden';
-      if (vidEl) vidEl.play();
+      vidEl.currentTime = 0;
+      vidEl.load();
+      var promise = vidEl.play();
+      if (promise && promise.catch) {
+        promise.catch(function() {
+          // Retry once after load
+          vidEl.load();
+          vidEl.play().catch(function() {});
+        });
+      }
     }
     function closeVid() {
       vidOverlay.classList.remove('open');
       document.body.style.overflow = '';
-      if (vidEl) { vidEl.pause(); vidEl.currentTime = 0; }
+      vidEl.pause();
+      vidEl.currentTime = 0;
     }
     vidTrigger.addEventListener('click', openVid);
     vidClose.addEventListener('click', closeVid);
