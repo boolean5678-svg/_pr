@@ -900,21 +900,148 @@ body {
 /* ================================================
    响应式
    ================================================ */
+
+/* ---- 平板 (≤1024px) ---- */
 @media (max-width: 1024px) {
-  .header {
-    padding: 24px 70px;
-  }
-  .nav { gap: 24px; font-size: 24px; }
-  .brand { font-size: 26px; }
+  .header { padding: 28px 40px; }
+  .nav { gap: 22px; font-size: 18px; }
+  .brand { font-size: 20px; }
 
   .home-content {
-    bottom: 100px;
-    left: 32px;
-    max-width: 520px;
+    bottom: 80px;
+    left: 40px;
+    max-width: 460px;
   }
-  .home-content h2, .home-content p { font-size: 24px; }
+  .home-content h2 { font-size: 24px; }
+  .home-content p { font-size: 18px; }
 
   .arrow { font-size: 48px; }
-  .dot { width: 14px; height: 14px; }
-  .sub-content { padding: 180px 32px 40px; }
+  .arrow-container { left: 16px; right: 16px; }
+  .dot { width: 10px; height: 10px; }
+  .dots-container { gap: 12px; }
+
+  .sub-content { padding: 140px 32px 40px; }
+
+  /* 项目页 */
+  .proj-row { max-width: calc(100vw - 48px); gap: 20px; }
+  .proj-img { max-width: 420px; max-height: 45vh; }
+  .proj-info { min-width: 120px; }
+  .proj-year { font-size: 24px; }
+  .proj-name { font-size: 13px; }
+
+  /* 个人信息 */
+  .content { column-gap: 60px; transform: translateY(-30px); }
+  .edu-school { font-size: 22px; }
+  .exp-role { font-size: 22px; }
+
+  .footer { right: 40px; bottom: 28px; }
+}
+
+/* ---- 手机 (≤768px) ---- */
+@media (max-width: 768px) {
+  .header {
+    padding: 18px 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .nav { gap: 16px; font-size: 15px; }
+  .brand { font-size: 18px; }
+
+  /* 主页 */
+  .home-content {
+    bottom: 90px;
+    left: 20px;
+    right: 20px;
+    max-width: none;
+  }
+  .home-content h2 { font-size: 20px; }
+  .home-content p { font-size: 15px; }
+
+  .arrow { font-size: 36px; }
+  .arrow-container { left: 6px; right: 6px; }
+  .dot { width: 8px; height: 8px; }
+  .dots-container { gap: 10px; bottom: 20px; }
+
+  .sub-content { padding: 110px 16px 60px; }
+
+  /* 项目页 — info 移到图片上方 */
+  #view-projects .sub-content {
+    padding-top: 120px;
+    padding-bottom: 40vh;
+  }
+  .proj-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: calc(100vw - 32px);
+  }
+  .proj-info {
+    align-items: center;
+    text-align: center;
+    min-width: auto;
+    order: -1;
+  }
+  .proj-name, .proj-loc { text-align: center; }
+  .proj-info.active { z-index: 2; }
+  .proj-img { max-width: 92vw; max-height: 40vh; }
+  .proj-year { font-size: 20px; margin-bottom: 6px; }
+  .proj-name { font-size: 13px; }
+  .proj-spacer { display: none; }
+
+  /* 理念页 */
+  #view-philosophy .phil-image { width: 96%; max-width: 96%; transform: scale(1.05); }
+  #view-philosophy .sub-content { padding: 100px 10px 40px; }
+
+  /* 技与术 — 已在上方处理 grid，此处覆盖间距 */
+  #view-technique .sub-content { padding-top: 100px; padding-left: 12px; padding-right: 12px; }
+  .tool-card { padding: 28px 20px 24px; gap: 16px; }
+
+  /* 个人信息 — 单列 */
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-areas: "left" "exp";
+    column-gap: 0;
+    row-gap: 40px;
+    transform: translateY(-10px);
+  }
+  .cell-left { gap: 28px; }
+  .edu-school { font-size: 20px; }
+  .exp-role { font-size: 20px; }
+  .exp-desc { font-size: 13px; }
+
+  .footer { right: 20px; bottom: 20px; }
+  .footer span { font-size: 8px; }
+
+  .lightbox-close { top: 16px; right: 20px; font-size: 32px; }
+  .lightbox-img { max-width: 96vw; max-height: 80vh; }
+  .lightbox-video { max-width: 96vw; max-height: 70vh; }
+}
+
+/* ---- 小屏手机 (≤480px) ---- */
+@media (max-width: 480px) {
+  .header { padding: 14px 14px; }
+  .nav { gap: 10px; font-size: 13px; flex-wrap: wrap; justify-content: flex-end; }
+  .brand { font-size: 16px; }
+
+  .home-content { bottom: 70px; left: 14px; right: 14px; }
+  .home-content h2 { font-size: 18px; }
+  .home-content p { font-size: 14px; }
+
+  .arrow { font-size: 28px; }
+  .arrow-container { left: 2px; right: 2px; }
+
+  .sub-content { padding: 100px 10px 60px; }
+
+  .proj-img { max-width: 98vw; max-height: 35vh; }
+  .proj-year { font-size: 17px; }
+  .proj-name { font-size: 12px; }
+
+  .tool-card { padding: 22px 16px 20px; gap: 12px; }
+  .tool-name { font-size: 14px; }
+  .tool-desc { font-size: 11px; }
+  .tool-tag { font-size: 9px; padding: 2px 7px; }
+
+  .content { row-gap: 32px; }
+  .edu-school { font-size: 18px; }
+  .exp-role { font-size: 18px; }
 }
