@@ -919,9 +919,13 @@ body {
   .proj-year { font-size: 24px; }
   .proj-name { font-size: 13px; }
 
-  /* 技与术 */
-  .tool-grid { grid-template-columns: repeat(3, 1fr); }
-  .tool-row { grid-template-columns: repeat(2, 1fr); }
+  /* 技与术 — 保持 4+3 列，压缩卡片内部 */
+  .tool-card { padding: 28px 22px 24px; gap: 16px; }
+  .tool-icon { width: 36px; height: 36px; }
+  .tool-icon svg { width: 32px; height: 32px; }
+  .tool-name { font-size: 14px; }
+  .tool-desc { font-size: 11px; }
+  .tool-tag { font-size: 9px; }
 
   /* 个人信息 */
   .content { column-gap: 60px; transform: translateY(-30px); }
@@ -986,14 +990,15 @@ body {
   #view-philosophy .phil-image { width: 96%; max-width: 96%; transform: scale(1.05); }
   #view-philosophy .sub-content { padding: 100px 10px 40px; }
 
-  /* 技与术 */
+  /* 技与术 — 保持 4+3 列，进一步压缩 */
   #view-technique { overflow-y: auto; }
-  #view-technique .sub-content { padding-top: 100px; padding-left: 12px; padding-right: 12px; height: auto; min-height: 100vh; }
-  .tool-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-  .tool-row { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-  .tool-card { padding: 24px 18px 20px; gap: 14px; }
-  .tool-name { font-size: 15px; }
-  .tool-desc { font-size: 12px; }
+  #view-technique .sub-content { padding-top: 100px; padding-left: 8px; padding-right: 8px; height: auto; min-height: 100vh; }
+  .tool-card { padding: 18px 10px 16px; gap: 10px; }
+  .tool-icon { width: 28px; height: 28px; }
+  .tool-icon svg { width: 24px; height: 24px; }
+  .tool-name { font-size: 13px; }
+  .tool-desc { font-size: 10px; }
+  .tool-tag { font-size: 8px; padding: 1px 6px; }
 
   /* 个人信息 — 单列 */
   .content {
@@ -1035,12 +1040,15 @@ body {
   .proj-year { font-size: 17px; }
   .proj-name { font-size: 12px; }
 
-  .tool-grid { grid-template-columns: 1fr; gap: 8px; }
-  .tool-row { grid-template-columns: 1fr; gap: 8px; }
-  .tool-card { padding: 22px 16px 20px; gap: 12px; }
-  .tool-name { font-size: 14px; }
-  .tool-desc { font-size: 11px; }
-  .tool-tag { font-size: 9px; padding: 2px 7px; }
+  /* 技与术 — 保持 4+3 列，极限压缩 */
+  .tool-grid { gap: 1px; }
+  .tool-row { gap: 1px; margin-top: 1px; }
+  .tool-card { padding: 14px 6px 12px; gap: 8px; border-radius: 3px; }
+  .tool-icon { width: 22px; height: 22px; }
+  .tool-icon svg { width: 20px; height: 20px; }
+  .tool-name { font-size: 11px; letter-spacing: 0; }
+  .tool-desc { font-size: 9px; line-height: 1.4; }
+  .tool-tag { font-size: 7px; padding: 1px 4px; border-radius: 1px; }
 
   .content { row-gap: 32px; }
   .edu-school { font-size: 18px; }
